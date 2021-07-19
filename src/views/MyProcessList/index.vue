@@ -1,5 +1,5 @@
 <template>
-  <div>4</div>
+  <div>我的投诉</div>
 </template>
 
 <script lang="ts">

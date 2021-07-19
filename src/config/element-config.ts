@@ -17,6 +17,7 @@ import {
   ElSubmenu,
   ElDropdownMenu,
   ElTabPane,
+  ElPopover,
 } from 'element-plus';
 
 const components = [
@@ -37,11 +38,11 @@ const components = [
   ElSubmenu,
   ElDropdownMenu,
   ElTabPane,
+  ElPopover,
 ]
 
 const elOption = {
-  size: 'small', 
-  zIndex: 3000,
+  size: 'small',
 }
 
 const elComponent = {

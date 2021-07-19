@@ -1,5 +1,5 @@
 <template>
-  <div>1123123123213</div>
+  <div>投诉单系统</div>
 </template>
 
 <script lang="ts">

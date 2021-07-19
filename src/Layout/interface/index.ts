@@ -3,7 +3,14 @@ interface Tab {
     title: string;
 }
 
+interface RightMenuOpton {
+    show: boolean
+    offsetTop: number
+    offsetLeft: number
+    activeTab: string
+}
 
 export {
-    Tab
+    Tab,
+    RightMenuOpton,
 }

@@ -1,12 +1,14 @@
 <template>
   <el-container>
     <el-aside width="auto">
-      <NavMenu
-        :shrinkAcitve="shrinkAcitve"
-        :activeMenu="activeRoute"
-        :menuList="menuList"
-        @afterPushRoute="afterPushRoute"
-      />
+      <el-scrollbar height="100%">
+        <NavMenu
+          :shrinkAcitve="shrinkAcitve"
+          :activeMenu="activeRoute"
+          :menuList="menuList"
+          @afterPushRoute="afterPushRoute"
+        />
+      </el-scrollbar>
     </el-aside>
     <el-container>
       <el-header height="auto">
@@ -26,7 +28,7 @@
         <el-scrollbar height="100%">
           <router-view v-slot="{ Component }">
             <transition>
-              <keep-alive :include="cacheRoutes">
+              <keep-alive :include="cacheRoutes.map(item => item.name)">
                 <component :is="Component" />
               </keep-alive>
             </transition>
@@ -61,7 +63,9 @@ export default defineComponent({
 
     //缓存的路由
     const cacheRoutesRef = ref([] as Tab[]);
-
+    watchEffect(() => {
+      console.log(cacheRoutesRef.value)
+    });
     const { shrinkAcitveRef, changeShrink } =  navBarMark();
 
     const { menuList, afterPushRoute } = navMenuMake(cacheRoutesRef);

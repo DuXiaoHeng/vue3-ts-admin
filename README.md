@@ -99,7 +99,8 @@ export {
 //main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import ElementPlus,{ locale } from 'element-plus';
+import { locale } from 'element-plus';
+import router from '@/router'
 import {elOption, elComponent} from '@/config/element-config';
 // 如果要使用.scss样式文件，则需要引入base.scss文件
 import 'element-plus/packages/theme-chalk/src/base.scss'
@@ -107,8 +108,11 @@ import 'element-plus/packages/theme-chalk/src/base.scss'
 import lang  from 'element-plus/lib/locale/lang/zh-cn'
 locale(lang)
 
-createApp(App)
-.use(ElementPlus, elOption)
+const app = createApp(App);
+//设置默认尺寸
+app.config.globalProperties.$ELEMENT = elOption
+
+app.use(router)
 .use(elComponent)
 .mount('#app');
 ```
