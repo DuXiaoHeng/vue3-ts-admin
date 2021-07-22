@@ -10,16 +10,16 @@
     <template v-for="menu in menuList">
       <el-submenu v-if="menu.children && menu.children.length" :index="menu.name">
         <template #title>
-          <i class="el-icon-location"></i>
+          <i :class="menu.meta.icon"></i>
           <span>{{ menu.meta.title }}</span>
         </template>
         <el-menu-item v-for="childMenu in menu.children" :index="childMenu.name" :key="childMenu.name" @click="selectMenu(childMenu.name, childMenu.meta.title)">
-          <i class="el-icon-menu"></i>
+          <i :class="menu.meta.icon"></i>
           <template #title>{{ childMenu.meta.title }}</template>
         </el-menu-item>
       </el-submenu>
       <el-menu-item v-else :index="menu.name" :key="menu.name" @click="selectMenu(menu.name, menu.meta.title)">
-        <i class="el-icon-menu"></i>
+        <i :class="menu.meta.icon"></i>
         <template #title>{{ menu.meta.title }}</template>
       </el-menu-item>
     </template>

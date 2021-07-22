@@ -11,7 +11,7 @@
       </span>
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item>退出登录</el-dropdown-item>
+          <el-dropdown-item @click="loginOut">退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>
@@ -29,9 +29,14 @@ export default defineComponent({
       ctx.emit('changeShrink', shrinkAcitveRef.value);
     };
     
+    const loginOut = () =>{
+      console.log('登出')
+    }
+
     return {
       shrinkAcitve: shrinkAcitveRef,
       changeShrink,
+      loginOut,
     };
   },
 });

@@ -10,7 +10,7 @@ const menuList: Array<RouteRecordRaw> = [
     component: () => import('@/views/AuditProcess/index.vue'),
     meta: {
       title: "投诉审核",
-      icon: '',
+      icon: 'el-icon-s-custom',
     },
   },
   {
@@ -19,7 +19,7 @@ const menuList: Array<RouteRecordRaw> = [
     component: () => import('@/views/PendingProcessList/index.vue'),
     meta: {
       title: "代办",
-      icon: '',
+      icon: 'el-icon-s-grid',
     },
   },
   {
@@ -28,7 +28,7 @@ const menuList: Array<RouteRecordRaw> = [
     component: () => import('@/views/ProcessedProcessList/index.vue'),
     meta: {
       title: "已处理",
-      icon: '',
+      icon: 'el-icon-s-grid',
     },
   },
   {
@@ -37,7 +37,7 @@ const menuList: Array<RouteRecordRaw> = [
     component: () => import('@/views/MyProcessList/index.vue'),
     meta: {
       title: "我的投诉",
-      icon: '',
+      icon: 'el-icon-s-grid',
     },
   },
   {
@@ -46,7 +46,7 @@ const menuList: Array<RouteRecordRaw> = [
     component: () => import('@/views/NewProcess/index.vue'),
     meta: {
       title: "发起投诉",
-      icon: '',
+      icon: 'el-icon-circle-plus',
     },
   },
   {
@@ -55,7 +55,7 @@ const menuList: Array<RouteRecordRaw> = [
     component: () => import('@/views/DataReport/index.vue'),
     meta: {
       title: "数据报表",
-      icon: '',
+      icon: 'el-icon-location',
     },
     children: [
       {
@@ -64,7 +64,7 @@ const menuList: Array<RouteRecordRaw> = [
         component: () => import('@/views/DataReport/components/DataReport1.vue'),
         meta: {
           title: "报表1",
-          icon: '',
+          icon: 'el-icon-s-marketing',
         },
       },
       {
@@ -73,7 +73,7 @@ const menuList: Array<RouteRecordRaw> = [
         component: () => import('@/views/DataReport/components/DataReport2.vue'),
         meta: {
           title: "报表2",
-          icon: '',
+          icon: 'el-icon-s-marketing',
         },
       }
     ]

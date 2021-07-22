@@ -66,7 +66,7 @@ export default defineComponent({
     watchEffect(() => {
       console.log(cacheRoutesRef.value)
     });
-    const { shrinkAcitveRef, changeShrink } =  navBarMark();
+    const { shrinkAcitveRef, changeShrink } =  navBarMake();
 
     const { menuList, afterPushRoute } = navMenuMake(cacheRoutesRef);
 
@@ -87,7 +87,7 @@ export default defineComponent({
   },
 });
 
-function navBarMark() {
+function navBarMake() {
   //折叠菜单
   const shrinkAcitveRef = ref(true);
   const changeShrink = (flag: boolean) => {
