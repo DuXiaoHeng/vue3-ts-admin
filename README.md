@@ -148,33 +148,7 @@ export default defineConfig({
 })
 ```
 
-### 解决执行npm run build 打包构建项目时 由于引入 element-plus 导致的报错
-- 在shims-vue.d.ts 文件中加入下面代码。代码来源于element-plus源代码：https://github.com/element-plus/element-plus/blob/dev/typings/vue-shim.d.ts
-```ts
-//解决element-plus打包报错
-declare type Nullable<T> = T | null;
-
-declare type CustomizedHTMLElement<T> = HTMLElement & T
-
-declare type Indexable<T> = {
-  [key: string]: T
-}
-
-declare type Hash<T> = Indexable<T>
-
-declare type TimeoutHandle = ReturnType<typeof global.setTimeout>
-
-declare type ComponentSize = 'large' | 'medium' | 'small' | 'mini'
-```
-
-- 在node_modules/element-plus/lib/el-select-v2/index.d.ts 文件中类型检验异常的地方加上下面语句用来忽略校验。
-```ts
-// @ts-ignore：类型校验错误
-```
-- eg：在需要忽略ts校验的行上方加上即可
-```ts
-// @ts-ignore：类型校验错误
-<S extends never>(predicate: (value: never, index: number, array: readonly never[]) => value is S, thisArg?: any): this is readonly S[];
-```
+### 解决执行npm run build 打包构建项目时由于elemet-ui导致的报错 在tsconfig.json中加下面的配置
+```"skipLibCheck": true, //第三方包不进行检查```
 ### 布局
 此处省略。。。具体看项目源码

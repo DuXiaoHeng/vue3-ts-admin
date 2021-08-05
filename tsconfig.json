@@ -8,6 +8,7 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "skipLibCheck": true, //第三方包不进行检查
     "lib": ["esnext", "dom"],
     "baseUrl": "./",
     "paths": {
